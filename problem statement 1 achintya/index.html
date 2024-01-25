@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Set the viewport to control the layout on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achintya's problem statement</title>
+    <!-- Include external JavaScript file with the "defer" attribute -->
+    <script defer src="anim.js"></script>
+    <!-- Include external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Link to Google Fonts CSS file -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <div class="layout">
+            <!-- Panel 1 with Home link -->
+            <div class="panel">
+                <p>home</p>
+            </div>
+            <!-- Panel 2 with Dropdown menu and Contact link -->
+            <div class="panel2">
+                <div class="dropdown">
+                    <p menu-drop>hobbies
+                        <div class="menu" id="menu">
+                            <span id="link"><a href="football.html" target="_blank">football</a></span>
+                            <span id="link"><a href="music.html" target="_blank">music</a></span>
+                            <span id="link"><a href="movies.html" target="_blank">movies</a></span>
+                        </div>
+                    </p>
+                </div>
+                <p class="contact"><a href="contact.html" target="_blank">contact</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Content Section -->
+    <div class="cont">
+        <!-- Image in the info1 section -->
+        <div id="infopics" class="hide">
+            <img src="img/IMG_3413.jpg" />
+        </div>
+        <!-- Info1 Section -->
+        <div class="info1">
+            <p class="hide">
+                About me.
+                <p id="subtext" class="hide">
+                    My name is Achintya Aravind Rai. I am from Mangalore, Karnataka. I am currently a student pursuing B.Tech in Aerospace Engineering.
+                </p>
+            </p>
+        </div>
+    </div>
+
+    <!-- Info2 Section -->
+    <div class="info2">
+        <p class="hide">
+            Experience.
+            <p id="subtext" class="hide">
+                I have a fair bit of previous experience with JavaScript and have worked with Python, Java, C++, C#, Lua, Swift, and Dart in the past. I have also worked with updating outdated pre-existing code in a prior project before. I have an interest in coding and would really like to join y'all.
+            </p>
+        </p>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer" id="direction">
+        <p id="words">
+            <!-- Link to the wallpaper source -->
+            <a href="https://wallpapers.com/wallpapers/my-beautiful-dark-twisted-fantasy-mftsrqblkq4kd8qm.html">Wallpaper by sairien.jean7</a> on Wallpapers.com<br>
+            Webpage by Achintya Aravind Rai
+        </p>
+    </div>
+
+    <!-- JavaScript Section -->
+    <script>
+        // JavaScript code for handling scroll and resize events
+        var oY = window.scrollY;
+        var hider = document.getElementById('direction');
+        var txt = document.getElementById('words');
+        var t1 = 0;
+
+        window.onresize = function a() {
+            if (window.innerWidth < 600) {
+                t1 = 0;
+                hider.style.height = "6%";
+                hider.style.fontWeight = "500";
+                hider.style.fontSize = "small";
+            } else {
+                if (t1 == 0) {
+                    t1 = 1;
+                    txt.style.transform = "scale(1)";
+                    hider.style.height = "15%";
+                    hider.style.fontWeight = "300";
+                    hider.style.color = "rgb(190, 175, 141)";
+                }
+                window.onscroll = function (e) {
+                    if (t1 == 1) {
+                        if (oY > window.scrollY) {
+                            txt.style.transform = "scale(1)";
+                            hider.style.height = "15%";
+                            hider.style.fontWeight = "300";
+                            hider.style.color = "rgb(190, 175, 141)";
+                        } else {
+                            txt.style.transform = "scale(0.45)";
+                            hider.style.height = "7%";
+                            hider.style.fontWeight = "300";
+                            hider.style.color = "rgb(190, 175, 141)";
+                        }
+                        oY = window.scrollY;
+                    }
+                };
+            }
+        };
+
+        window.onscroll = function (e) {
+            if (window.innerWidth > 600) {
+                if (oY > window.scrollY) {
+                    txt.style.transform = "scale(1)";
+                    hider.style.height = "15%";
+                    hider.style.fontWeight = "300";
+                    hider.style.color = "rgb(190, 175, 141)";
+                } else {
+                    txt.style.transform = "scale(0.45)";
+                    hider.style.height = "7%";
+                    hider.style.fontWeight = "300";
+                    hider.style.color = "rgb(190, 175, 141)";
+                }
+                oY = window.scrollY;
+            }
+        };
+    </script>
+</body>
+</html>

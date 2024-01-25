@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Set viewport for responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title -->
+    <title>Achintya's Problem Statement - Music</title>
+    <!-- Include external JavaScript file with defer attribute -->
+    <script defer src="animmu.js"></script>
+    <!-- Include external stylesheet for styling -->
+    <link rel="stylesheet" href="stylemu.css">
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Include Google Fonts stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Header section -->
+    <div class="header">
+      <div class="layout">
+        <div class="panel">
+          <!-- Heading for the music section -->
+          <p>music</p>
+        </div>
+        <div class="panel2">
+          <!-- Home link -->
+          <p><a href="index.html" target="_blank">home</a></p>
+          <!-- Hobbies dropdown -->
+          <div class="dropdown">
+            <p menu-drop>hobbies
+              <!-- Dropdown menu for hobbies -->
+              <div class="menu" id="menu">
+                <span id="link"><a href="football.html" target="_blank">football</a></span>
+                <span id="link"><a href="movies.html" target="_blank">movies</a></span>
+              </div>
+            </p>
+          </div>
+          <!-- Contact link -->
+          <p class="contact"><a href="contact.html" target="_blank">contact</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content section -->
+    <div class="cont">
+      <div class="info1">
+        <!-- Text about music interests -->
+        <p id="subtext">
+          I listen to a lot of music in my spare time. I am a hip hop head in general, but I do occasionally tune in to R&B as well as rock.
+          Kanye West is my favourite artist of all time, and Atrocity Exhibition by Danny Brown is my favourite album of all time.
+          Click this to play/pause the audio visualiser.
+        </p>
+      </div>
+
+      <!-- Container for the audio visualizer -->
+      <div id="container">
+        <canvas id="canvas"></canvas>
+      </div>
+    </div>
+
+    <!-- Footer section -->
+    <div>
+      <!-- Placeholder image (empty href attribute) -->
+      <img href=""/>
+    </div>
+    <div class="footer" id="direction">
+      <!-- Footer text with attribution -->
+      <p id="words">Webpage by Achintya Aravind Rai</p>
+    </div>
+
+    <!-- Script for scroll behavior and other interactions -->
+    <script>
+      var oY = window.scrollY;
+      var hider = document.getElementById('direction');
+      var txt = document.getElementById('words');
+      var t1 = 0;
+
+      // Function to handle window resize
+      window.onresize = function a() {
+        if (window.innerWidth < 600) {
+          t1 = 0;
+          hider.style.height = "6%";
+          hider.style.fontWeight = "500";
+          hider.style.fontSize = "small";
+        } else {
+          if (t1 == 0) {
+            t1 = 1;
+            txt.style.transform = "scale(1)";
+            hider.style.height = "15%";
+            hider.style.fontWeight = "300";
+            hider.style.color = "rgb(177, 177, 177)";
+          }
+          // Function to handle scroll events and change footer size when resizing
+          window.onscroll = function(e) {
+            if (t1 == 1) {
+              if (oY > window.scrollY) {
+                txt.style.transform = "scale(1)";
+                hider.style.height = "15%";
+                hider.style.fontWeight = "300";
+                hider.style.color = "rgb(177, 177, 177)";
+              } else {
+                txt.style.transform = "scale(0.45)";
+                hider.style.height = "7%";
+                hider.style.fontWeight = "300";
+                hider.style.color = "rgb(177, 177, 177)";
+              }
+              oY = window.scrollY;
+            }
+          }
+        }
+      };
+
+      // Function to handle scroll events and change footer size
+      window.onscroll = function(e) {
+        if (window.innerWidth > 600) {      //Smaller screens do not have hiding footer functionality
+          if (oY > window.scrollY) {
+            txt.style.transform = "scale(1)";
+            hider.style.height = "15%";
+            hider.style.fontWeight = "300";
+            hider.style.color = "rgb(177, 177, 177)";
+          } else {
+            txt.style.transform = "scale(0.45)";
+            hider.style.height = "7%";
+            hider.style.fontWeight = "300";
+            hider.style.color = "rgb(177, 177, 177)";
+          }
+          oY = window.scrollY;
+        }
+      }
+    </script>
+  </body>
+</html>

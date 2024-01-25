@@ -1,0 +1,260 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Bodoni MT, Arial;
+    height: 100vw;
+    background-color: rgb(236, 227, 217);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header {
+    background: linear-gradient(rgba(255, 0, 0, 0), rgba(32, 0, 0, 0.603)), url(img/mbdtf.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    user-select: none;
+    height: 760px;
+    display: flex;
+}
+
+.header p {
+    color: rgba(223, 205, 185, 0.788);
+    margin: 0;
+    padding: 0%;
+    font-size: 20vw;
+    transition: color 0.5s;
+}
+
+.header p:hover {
+    color: rgb(253, 244, 233);
+}
+
+.panel {
+    display: flex;
+    position: absolute;
+    bottom: 0vw;
+}
+
+.panel2 {
+    display: flex;
+    position: absolute;
+    bottom: 5vw;
+    right: 0vw;
+}
+
+span {
+    display: block;
+    font-size: 1.5vw;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 4%;
+}
+
+span:active {
+    color: black;
+}
+
+span:hover {
+    background-color: rgb(235, 197, 154);
+    color: rgba(32, 29, 27, 0.849);
+}
+
+.panel2 p {
+    font-size: 2vw;
+    text-decoration: none;
+    padding-right: 1vw;
+    display: block;
+    cursor: pointer;
+    transition: color 0.5s;
+}
+
+.panel2 p:hover {
+    color: rgb(253, 244, 233);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.contact {
+    position: relative;
+}
+
+#menu {
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    width: 5vw;
+    color: rgba(41, 36, 32, 0.76);
+    background-color: blanchedalmond;
+    top: calc(100% + .25rem);
+    padding: .25rem;
+    border-radius: .25rem;
+    box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.233);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 700 ms ease-in-out;
+}
+
+.cont {
+    display: flex;
+    flex-direction: row;
+}
+
+#infopics {
+    display: flex;
+    padding-top: 15%;
+    padding-left: 2%;
+    flex: 2;
+}
+
+#infopics img {
+    object-fit: cover;
+    object-position: center center;
+    position: relative;
+    width: 50vw;
+    height: 30vw;
+    border-radius: 5%;
+}
+
+.info1 {
+    color: rgb(11, 17, 26);
+    display: flex;
+    flex: 1.5;
+    flex-direction: column;
+    justify-content: left;
+    padding-top: 15%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 7vw;
+    margin: 0;
+}
+
+.info2 {
+    color: rgb(11, 17, 26);
+    display: flex;
+    flex: 1.5;
+    flex-direction: column;
+    justify-content: left;
+    padding-top: 15%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 7vw;
+    padding-left: 2%;
+    padding-bottom: 20vw;
+    margin: 0;
+}
+
+.info2 p {
+    display: flex;
+    flex: 1;
+    padding-top: 0%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    z-index: 30;
+}
+
+.info1 p {
+    display: flex;
+    flex: 1;
+    padding-top: 0%;
+    margin-top: 0%;
+    padding-left: 5%;
+    margin-bottom: 0%;
+    z-index: 30;
+}
+
+#subtext {
+    display: flex;
+    font-size: 2vw;
+    padding-top: 0%;
+    margin-top: 0%;
+    transition: all 1s;
+}
+
+@media(prefers-reduced-motion) {
+    .hide {
+        transition: none;
+    }
+}
+
+.hide {
+    margin-top: 0;
+    padding-top: 0;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(+50%);
+    transition: all 1s;
+}
+
+.show {
+    filter: blur(0px);
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.footer {
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    height: 15%;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: 9000;
+    color: rgb(190, 175, 141);
+    background: rgb(11, 17, 26);
+    font-size: 1vw;
+    justify-content: right;
+    transition: all 0.25s;
+}
+
+.footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer p {
+    margin-top: 0.7%;
+    margin-right: 0.7%;
+}
+
+#words {
+    transition: all 0.24s;
+}
+
+@media screen and (max-width: 600px) {
+    .header {
+        height: 105vw;
+    }
+
+    .footer {
+        font-weight: 500;
+        height: 6%;
+        font-size: small;
+        width: 100%;
+    }
+
+    .body {
+        transform: scale(1.2);
+    }
+
+    .panel2 p {
+        font-size: 4vw;
+        padding-right: 1vw;
+        display: block;
+    }
+
+    span {
+        font-size: 3vw;
+    }
+
+    #menu {
+        width: 10vw;
+    }
+}
